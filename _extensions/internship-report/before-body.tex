@@ -1,0 +1,39 @@
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+$if(title)$
+\cleardoublepage
+\thispagestyle{empty}
+{\centering
+\hbox{}\vskip 0cm plus 1fill
+\includegraphics[width=4cm]{$if(logo)$$logo$$else$img/unipd.pdf$endif$}\\
+\vspace{5ex}
+\rule{\linewidth}{0.4 mm} \\
+{\huge\bfseries $title$ \par}
+$if(subtitle)$
+\vspace{3ex}
+{\large\bfseries $subtitle$ \par}
+$endif$
+\rule{\linewidth}{0.4 mm} \\
+\vspace{12ex}
+$for(by-author)$
+{\Large\bfseries $by-author.name.literal$ \par}
+\vspace{3ex}
+\vskip 0cm plus 2fill
+{\bfseries\large $scope$ \par}
+\vspace{3ex}
+{\bfseries\large $academicyear$ \par}
+\vspace{12ex}
+$for(by-author.affiliations)$%
+$if(it.department)$%
+{\bfseries\large $it.department$ \par}
+\vspace{3ex}
+$endif$%
+{\bfseries\large $it.name$ \par}
+$endfor$$endfor$%
+\vspace{12ex}
+{\small $for(supervisor)$ $if(supervisor.prefix)$\textbf{$supervisor.prefix$}:$endif$ $if(supervisor.name)$ $supervisor.name$ $endif$ $endfor$\par}
+{\small $for(cosupervisor)$ $if(cosupervisor.prefix)$\textbf{$cosupervisor.prefix$}:$endif$ $if(cosupervisor.name)$ $cosupervisor.name$ $endif$ $endfor$\par}
+}
+\newpage
+$endif$

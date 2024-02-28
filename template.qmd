@@ -1,0 +1,73 @@
+---
+title: "Internship Report Title"
+subtitle: "Internship Report Subtitle"
+author: "Name Surname"
+scope: "Internship Report"
+academicyear: "202x-202x"
+supervisor:
+    - prefix: "Supervisor"
+    - name: "Name Surname"
+cosupervisor:
+    - prefix: "Co-Supervisor"
+    - name: "Name Surname"
+format:
+  internship-report-pdf: default
+logo: "img/unipd.pdf"
+csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl"
+bibliography: "files/references.bib"
+crossref:
+  lof-title: "List of Figures"
+  lot-title: "List of Tables"
+  fig-prefix: "Figure"
+  fig-title: "Figure"
+  tbl-prefix: "Table"
+  tbl-title: "Table"
+---
+
+# Writing in Markdown
+
+Markdown is a very easy and intuitive markup language that can be converted to any other document format using [Pandoc](https://pandoc.org/).
+
+Learning Markdown is very easy and there are multiple online resources:
+
+- [https://www.markdowntutorial.com/](https://www.markdowntutorial.com/)
+- [https://www.markdownguide.org/getting-started/](https://www.markdownguide.org/getting-started/)
+
+## What about Quarto?
+
+Quarto is an open-source scientific and technical publishing system that combine (Pandoc) Markdown with programming languages (e.g., R) to create high-quality documents in different formats e.g. pdf or html. Quarto has a very detailed and extensive documentation [https://quarto.org/docs/guide/](https://quarto.org/docs/guide/).
+
+## Include references
+
+References are easily implemented in Quarto. You need to specify a **bibtex** file in the YAML frontmatter `bibliography: file.bib` and then start citing the references using the bibtex keys. See the Quarto documentation [https://quarto.org/docs/authoring/footnotes-and-citations.html](https://quarto.org/docs/authoring/footnotes-and-citations.html).
+
+For example using `@Lakens2018-ri` produce @Lakens2018-ri. To create a citation within parentheses you can use `[@Lakens2018-ri]` producing [@Lakens2018-ri]. You can also cite multiple sources as [@Lakens2018-ri; @Liddell2018-wu]
+
+## Including images
+
+External images (i.e., where you have a file) can be included using the markdown/Quarto syntax (see the Quarto documentation [https://quarto.org/docs/authoring/figures.html](https://quarto.org/docs/authoring/figures.html)). For example using `![This is my nice figure caption](img/unipd.pdf)` will include the image:
+
+![This is my nice figure caption](img/unipd.pdf){#fig-unipd-logo}
+
+If you define a label for the image (see [https://quarto.org/docs/authoring/figures.html#cross-references](https://quarto.org/docs/authoring/figures.html#cross-references)) you can also refer to it in the text without worrying about the actual number. For example you can say "as seen in `@fig-unipd-logo`" and `@fig-unipd-logo` will be replaced by the prefix "Figure" and the number of the figure. For example, @fig-unipd-logo shows the logo of the University of Padova.
+
+Images can be also produced by R for example from the `plot()` function. The following code chunk will create an histogram presented in @fig-hist.
+
+```{r}
+#| eval: false
+hist(rnorm(100), breaks = 50, col = "dodgerblue")
+```
+
+```{r}
+#| echo: false
+#| label: fig-hist
+#| fig-cap: This is a nice histogram
+hist(rnorm(100), breaks = 50, col = "dodgerblue")
+```
+
+\newpage
+
+# References {-}
+
+::: {#refs}
+:::

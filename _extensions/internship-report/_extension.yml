@@ -1,0 +1,16 @@
+title: Internship-report
+author: filippogambarota
+version: 1.0.0
+quarto-required: ">=1.4.0"
+contributes:
+  formats:
+    pdf:
+      documentclass: scrartcl
+      number-sections: true
+      template-partials:
+        - "before-body.tex"
+        - "toc.tex"
+      toc: true
+      lof: false
+      lot: false
+      link-citations: true
