@@ -3,8 +3,9 @@
 
 .DS_Store
 /.luarc.json
-template.html
-template.pdf
+template.*
+!template.qmd
+
 *_files
 .Rproj.user
 

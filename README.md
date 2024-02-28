@@ -21,6 +21,8 @@ quarto use template students-starting/internship-report
 
 This will install the extension and create an example `qmd` file that you can use as a starting place for your article.
 
+The [template.qmd](template.qmd) contains an example of the source document and [template.pdf](template.pdf) the compilated result.
+
 ## R Project
 
 I suggest you to create an R Project from R Studio within a folder for your internship project (see [https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)). Then you run the `quarto use template ...` command within this folder. In this way you have an R Project where you can work with R if necessary and then your template to create the report.
