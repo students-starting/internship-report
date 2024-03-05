@@ -5,7 +5,7 @@ quarto-required: ">=1.4.0"
 contributes:
   formats:
     pdf:
-      documentclass: scrartcl
+      documentclass: article
       number-sections: true
       template-partials:
         - "before-body.tex"

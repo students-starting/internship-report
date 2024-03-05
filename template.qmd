@@ -11,7 +11,8 @@ cosupervisor:
     - prefix: "Co-Supervisor"
     - name: "Name Surname"
 format:
-  internship-report-pdf: default
+  internship-report-pdf: 
+    indent: true
 logo: "img/unipd.pdf"
 csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl"
 bibliography: "files/references.bib"
